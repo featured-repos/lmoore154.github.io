@@ -1,0 +1,15 @@
+.avatar {
+  text-align: center;
+}
+
+.avatar img {
+  height: 100px;
+}
+
+.username {
+  text-align: center;
+}
+
+.post_body {
+  padding-top: 20px;
+}
