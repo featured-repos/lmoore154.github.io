@@ -9,13 +9,24 @@ $(document).ready(function(){
         compiledHTML = template(context)
         $("#content").append(compiledHTML)
 
+    $(".user-expand").click(function(e) {
+      modalSource = $("#modal-template").html()
+      modalTemplate = Handlebars.compile(modalSource)
+      modalContext = { username: $(e.target).text() }
+      modalHTML = modalTemplate(modalContext)
+      $(".modal-content").html(modalHTML)
+      $("#modal-id").modal("show")
     })
+
+  })
 
 })
 
 Handlebars.registerHelper('dateFormatter', function(time) {
   return moment(time).format('MMMM Do, YYYY @ h:mm:ss a')
 })
+
+
 
         // tempHTML = `
         //   <div class="row">
